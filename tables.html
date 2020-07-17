@@ -115,17 +115,20 @@
 	</tbody>
 </table>
 	
-<script src="../../jqy-libs/jquery.js"></script> 
+<script src="../../jqy-libs/jquery.js"></script>
 <script src="js/stripe.js"></script> 
 <script>
-Globals.stripe('.mostTables', '#ccddff', '#aaaaaa');
+$('.mostTables').stripe({ evenColor:'#ccddff', oddColor:'#aaaaaa' });
 
-Globals.stripe('.innerfruits', '#ffdd77');
-$('.innerfruits').css('fontStyle', 'italic' );
+$('.innerfruits')
+	.stripe({ evenColor:'#ffdd77' })
+	.css( 'fontStyle', 'italic' );
 
-Globals.evenColor = '#ffddff';
-Globals.oddColor = '#aaffaa';
-Globals.stripe('table.little');
+$.fn.stripe.defaults = {
+	evenColor:'#ffddff',
+	oddColor:'#aaffaa'
+};
+$('table.little').stripe();
 </script>
 </body>
 </html>
