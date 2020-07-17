@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+	<title>Table Striping</title>
+	<style>
+	td { text-align: center; }
+	table { margin-bottom: 20px; }
+	.little td { padding: 2px 20px; }
+	caption { font-weight: bold; }
+	</style>
+</head>
+<body>
+<div class="mostTables">
+<table id="fruits">
+	<thead>
+		<tr id='1'>
+			<th>Apples</th><th>Oranges</th><th>Pears</th><th>Nectarines</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr id='2'>
+			<td>1</td><td id="myTableCell">2</td><td>3</td><td>4</td>
+		</tr>
+		<tr id='3'>
+			<td>2</td><td>6</td><td>4</td><td>8</td>
+		</tr>
+		<tr id='4'>
+			<td>1</td><td>7</td><td>5</td><td>3</td>
+		</tr>
+		<tr id='5'>
+			<td>20</td><td>30</td><td>10</td><td>100</td>
+		</tr>
+		<tr id='6'>
+			<td colspan="4">
+				<table id='innerfruits1' class='innerfruits'>
+					<thead>
+						<tr id='6a'>
+							<th>Cherries</th><th>Peaches</th><th>Grapes</th><th>Bananas</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id='6b'>
+							<td>1</td><td id="myTableCell">2</td><td>3</td><td>4</td>
+						</tr>
+						<tr id='6c'>
+							<td>2</td><td>6</td><td>4</td><td>8</td>
+						</tr>
+						<tr id='6d'>
+							<td>1</td><td>7</td><td>5</td><td>3</td>
+						</tr>
+						<tr id='6e'>
+							<td>20</td><td>30</td><td>10</td><td>100</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr id='7'>
+			<td colspan="4">
+				<table id='innerfruits2' class='innerfruits'>
+					<thead>
+						<tr id='7a'>
+							<th>Mangos</th><th>Papayas</th><th>Kumquats</th><th>Guavas</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id='7b'>
+							<td>1</td><td id="myTableCell">2</td><td>3</td><td>4</td>
+						</tr>
+						<tr id='7c'>
+							<td>2</td><td>6</td><td>4</td><td>8</td>
+						</tr>
+						<tr id='7d'>
+							<td>1</td><td>7</td><td>5</td><td>3</td>
+						</tr>
+						<tr id='7e'>
+							<td>20</td><td>30</td><td>10</td><td>100</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table id="morefruits">
+	<thead>
+		<tr id='8'>
+			<th>Kiwis</th><th>Avacados</th><th>Tomatos</th><th>Pumpkins</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr id='9'>
+			<td>1</td><td id="myTableCell">2</td><td>3</td><td>4</td>
+		</tr>
+		<tr id='10'>
+			<td>2</td><td>6</td><td>4</td><td>8</td>
+		</tr>
+		<tr id='11'>
+			<td>1</td><td>7</td><td>5</td><td>3</td>
+		</tr>
+		<tr id='12'>
+			<td>20</td><td>30</td><td>10</td><td>100</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<table class="little">
+	<tbody>
+		<tr><td>1</td></tr>
+		<tr><td>2</td></tr>
+		<tr><td>3</td></tr>
+		<tr><td>4</td></tr>
+	</tbody>
+</table>
+	
+<script src="../../jqy-libs/jquery.js"></script> 
+<script src="js/stripe.js"></script> 
+<script>
+Globals.stripe('.mostTables', '#ccddff', '#aaaaaa');
+
+Globals.stripe('.innerfruits', '#ffdd77');
+$('.innerfruits').css('fontStyle', 'italic' );
+
+Globals.evenColor = '#ffddff';
+Globals.oddColor = '#aaffaa';
+Globals.stripe('table.little');
+</script>
+</body>
+</html>
